@@ -122,7 +122,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Início
+              Home
             
           </span>
         </div>
@@ -318,7 +318,7 @@
   <span class="md-ellipsis">
     
   
-    Início
+    Home
   
 
     
@@ -336,7 +336,7 @@
   <span class="md-ellipsis">
     
   
-    Início
+    Home
   
 
     
@@ -427,7 +427,7 @@
   <span class="md-ellipsis">
     
   
-    Por que o Reversa
+    Why Reversa
   
 
     
@@ -454,7 +454,7 @@
   <span class="md-ellipsis">
     
   
-    Instalação
+    Installation
   
 
     
@@ -481,7 +481,7 @@
   <span class="md-ellipsis">
     
   
-    Como usar
+    How to use
   
 
     
@@ -535,7 +535,7 @@
   <span class="md-ellipsis">
     
   
-    Configuração
+    Configuration
   
 
     
@@ -562,7 +562,7 @@
   <span class="md-ellipsis">
     
   
-    Engines suportadas
+    Supported engines
   
 
     
@@ -589,7 +589,7 @@
   <span class="md-ellipsis">
     
   
-    Pipeline de análise
+    Analysis pipeline
   
 
     
@@ -616,7 +616,7 @@
   <span class="md-ellipsis">
     
   
-    Escala de confiança
+    Confidence scale
   
 
     
@@ -661,7 +661,7 @@
   <span class="md-ellipsis">
     
   
-    Agentes
+    Agents
   
 
     
@@ -677,7 +677,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    Agentes
+    Agents
   
 
           </label>
@@ -697,7 +697,35 @@
   <span class="md-ellipsis">
     
   
-    Visão geral
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="agentes/agents-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guide with analogies
   
 
     
@@ -725,7 +753,7 @@
   <span class="md-ellipsis">
     
   
-    Reversa (Orquestrador)
+    Reversa (Orchestrator)
   
 
     
@@ -781,7 +809,7 @@
   <span class="md-ellipsis">
     
   
-    Arqueólogo
+    Archaeologist
   
 
     
@@ -809,7 +837,7 @@
   <span class="md-ellipsis">
     
   
-    Detetive
+    Detective
   
 
     
@@ -837,7 +865,7 @@
   <span class="md-ellipsis">
     
   
-    Arquiteto
+    Architect
   
 
     
@@ -865,7 +893,7 @@
   <span class="md-ellipsis">
     
   
-    Redator
+    Writer
   
 
     
@@ -893,35 +921,7 @@
   <span class="md-ellipsis">
     
   
-    Revisor
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="agentes/tracer/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tracer
+    Reviewer
   
 
     
@@ -1019,62 +1019,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="agentes/chronicler/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chronicler
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="agentes/agents-help/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Guia com analogias
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1096,7 +1040,34 @@
   <span class="md-ellipsis">
     
   
-    Saídas geradas
+    Generated outputs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="desenvolvendo-com-specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developing from specs
   
 
     
@@ -1123,7 +1094,7 @@
   <span class="md-ellipsis">
     
   
-    Contribuindo
+    Contributing
   
 
     
@@ -1270,6 +1241,16 @@
 </div>
 <hr />
 <h2 id="safety-guarantee">Safety guarantee<a class="headerlink" href="#safety-guarantee" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">💾 Back up your project before starting</p>
+<p>Although Reversa never modifies your files, AI agents can make mistakes. <strong>We strongly recommend:</strong></p>
+<ol>
+<li><strong>Version the project in Git</strong> — make sure all files are committed before starting the analysis</li>
+<li><strong>Have the repository on GitHub</strong> (or GitLab, Bitbucket) — so you have a safe remote copy</li>
+<li><strong>Make a local copy of the folder</strong> — a simple <code>cp -r my-project my-project-backup</code> protects against any unexpected event</li>
+</ol>
+<p>If something unexpected happens during analysis, you can restore the original state with <code>git restore .</code> or from the backup copy.</p>
+</div>
 <div class="admonition warning">
 <p class="admonition-title">Reversa never touches your files</p>
 <p>Agents write <strong>only</strong> to <code>.reversa/</code> and <code>_reversa_sdd/</code>. No file in your project is modified, deleted, or overwritten. Ever.</p>

@@ -15,10 +15,10 @@
         <link rel="canonical" href="https://sandeco.github.io/reversa/pt/saidas/">
       
       
-        <link rel="prev" href="../agentes/agents-help/">
+        <link rel="prev" href="../agentes/design-system/">
       
       
-        <link rel="next" href="../contribuindo/">
+        <link rel="next" href="../desenvolvendo-com-specs/">
       
       
         
@@ -629,6 +629,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../agentes/agents-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guia com analogias
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../agentes/reversa/" class="md-nav__link">
         
   
@@ -692,7 +720,7 @@
   <span class="md-ellipsis">
     
   
-    Arqueólogo
+    Archaeologist
   
 
     
@@ -720,7 +748,7 @@
   <span class="md-ellipsis">
     
   
-    Detetive
+    Detective
   
 
     
@@ -748,7 +776,7 @@
   <span class="md-ellipsis">
     
   
-    Arquiteto
+    Architect
   
 
     
@@ -776,7 +804,7 @@
   <span class="md-ellipsis">
     
   
-    Redator
+    Writer
   
 
     
@@ -804,35 +832,7 @@
   <span class="md-ellipsis">
     
   
-    Revisor
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../agentes/tracer/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tracer
+    Reviewer
   
 
     
@@ -917,62 +917,6 @@
     
   
     Design System
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../agentes/chronicler/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chronicler
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../agentes/agents-help/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Guia com analogias
   
 
     
@@ -1092,10 +1036,48 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#proximo-passo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Próximo passo
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desenvolvendo-com-specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desenvolvendo com as specs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -1186,6 +1168,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#proximo-passo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Próximo passo
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1208,70 +1201,86 @@
 
 <h1 id="saidas-geradas">Saídas geradas<a class="headerlink" href="#saidas-geradas" title="Permanent link">&para;</a></h1>
 <p>Tudo que o Reversa produz vai para a pasta <code>_reversa_sdd/</code> (ou o nome que você configurar em <code>config.toml</code>). O projeto legado nunca é tocado.</p>
+<p>O conjunto de artefatos gerados depende do <strong>nível de documentação</strong> escolhido no início da análise:</p>
+<table>
+<thead>
+<tr>
+<th>Legenda</th>
+<th>Nível</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>(todos)</em></td>
+<td>Gerado nos 3 níveis</td>
+</tr>
+<tr>
+<td><em>(completo+)</em></td>
+<td>Apenas nos níveis <code>completo</code> e <code>detalhado</code></td>
+</tr>
+<tr>
+<td><em>(detalhado)</em></td>
+<td>Apenas no nível <code>detalhado</code></td>
+</tr>
+</tbody>
+</table>
 <hr />
 <h2 id="estrutura-completa">Estrutura completa<a class="headerlink" href="#estrutura-completa" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>_reversa_sdd/
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── inventory.md              # Inventário do projeto (Scout)
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── dependencies.md           # Dependências com versões (Scout)
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── code-analysis.md          # Análise técnica por módulo (Arqueólogo)
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── data-dictionary.md        # Dicionário completo de dados (Arqueólogo)
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── domain.md                 # Glossário e regras de negócio (Detetive)
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── state-machines.md         # Máquinas de estado em Mermaid (Detetive)
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── permissions.md            # Matriz de permissões (Detetive)
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── architecture.md           # Visão arquitetural geral (Arquiteto)
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── c4-context.md             # Diagrama C4: Contexto (Arquiteto)
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>├── c4-containers.md          # Diagrama C4: Containers (Arquiteto)
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>├── c4-components.md          # Diagrama C4: Componentes (Arquiteto)
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>├── erd-complete.md           # ERD completo em Mermaid (Arquiteto)
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>├── confidence-report.md      # Relatório de confiança 🟢🟡🔴 (Revisor)
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>├── gaps.md                   # Lacunas sem resposta (Revisor)
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>├── questions.md              # Perguntas para validação humana (Revisor)
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>├── dynamic.md                # Descobertas da análise dinâmica (Tracer)
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>├── sdd/                      # Specs por componente (Redator)
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│   └── [componente].md
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>│
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>├── openapi/                  # Specs de API (Redator)
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│   └── [api].yaml
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>│
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>├── user-stories/             # User stories (Redator)
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>│   └── [fluxo].md
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>│
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>├── adrs/                     # Decisões arquiteturais retroativas (Detetive)
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>│   └── [numero]-[titulo].md
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>│
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>├── flowcharts/               # Fluxogramas em Mermaid (Arqueólogo)
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>│   └── [modulo].md
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>│
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>├── sequences/                # Diagramas de sequência (Tracer)
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>│   └── [fluxo].md
-<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>│
-<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>├── ui/                       # Specs de interface (Visor)
-<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>│   ├── inventory.md
-<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>│   ├── flow.md
-<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>│   └── screens/
-<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>│       └── [tela].md
-<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>│
-<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>├── database/                 # Specs de banco de dados (Data Master)
-<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>│   ├── erd.md
-<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>│   ├── data-dictionary.md
-<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>│   ├── relationships.md
-<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>│   ├── business-rules.md
-<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>│   └── procedures.md
-<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>│
-<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>├── design-system/            # Tokens de design (Design System)
-<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>│   ├── color-palette.md
-<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>│   ├── typography.md
-<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>│   ├── spacing.md
-<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>│   ├── tokens.md
-<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>│   └── design-system.md
-<a id="__codelineno-0-56" name="__codelineno-0-56" href="#__codelineno-0-56"></a>│
-<a id="__codelineno-0-57" name="__codelineno-0-57" href="#__codelineno-0-57"></a>├── changelog/                # Alterações documentadas (Chronicler)
-<a id="__codelineno-0-58" name="__codelineno-0-58" href="#__codelineno-0-58"></a>│   └── YYYY-MM-DD.md
-<a id="__codelineno-0-59" name="__codelineno-0-59" href="#__codelineno-0-59"></a>│
-<a id="__codelineno-0-60" name="__codelineno-0-60" href="#__codelineno-0-60"></a>└── traceability/
-<a id="__codelineno-0-61" name="__codelineno-0-61" href="#__codelineno-0-61"></a>    ├── spec-impact-matrix.md # Qual spec impacta qual (Arquiteto)
-<a id="__codelineno-0-62" name="__codelineno-0-62" href="#__codelineno-0-62"></a>    └── code-spec-matrix.md   # Arquivo de código → spec correspondente (Redator)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── inventory.md              # Inventário do projeto — todos
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>├── dependencies.md           # Dependências com versões — todos
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>├── code-analysis.md          # Análise técnica por módulo — todos
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>├── data-dictionary.md        # Dicionário completo de dados — completo+
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>├── domain.md                 # Glossário e regras de negócio — todos
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>├── state-machines.md         # Máquinas de estado em Mermaid — completo+
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>├── permissions.md            # Matriz de permissões — completo+
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>├── architecture.md           # Visão arquitetural geral — todos
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── c4-context.md             # Diagrama C4: Contexto — todos
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>├── c4-containers.md          # Diagrama C4: Containers — completo+
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>├── c4-components.md          # Diagrama C4: Componentes — completo+
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>├── erd-complete.md           # ERD completo em Mermaid — completo+
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>├── deployment.md             # Diagrama de infraestrutura — detalhado
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>├── confidence-report.md      # Relatório de confiança 🟢🟡🔴 — todos
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>├── gaps.md                   # Lacunas sem resposta — completo+
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>├── questions.md              # Perguntas para validação humana — todos
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>├── sdd/                      # Specs por componente — todos
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│   └── [componente].md
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>├── openapi/                  # Specs de API — completo+
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>│   └── [api].yaml
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>├── user-stories/             # User stories — completo+
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>│   └── [fluxo].md
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>│
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>├── adrs/                     # Decisões arquiteturais retroativas — completo+
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>│   └── [numero]-[titulo].md
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>│
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>├── flowcharts/               # Fluxogramas em Mermaid — completo+
+<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a>│   └── [modulo].md
+<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>│
+<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a>├── ui/                       # Specs de interface (Visor)
+<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a>│   ├── inventory.md
+<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a>│   ├── flow.md
+<a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>│   └── screens/
+<a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>│       └── [tela].md
+<a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>│
+<a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>├── database/                 # Specs de banco de dados (Data Master)
+<a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>│   ├── erd.md
+<a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>│   ├── data-dictionary.md
+<a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>│   ├── relationships.md
+<a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>│   ├── business-rules.md
+<a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>│   └── procedures.md
+<a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a>│
+<a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a>├── design-system/            # Tokens de design (Design System)
+<a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a>│   ├── color-palette.md
+<a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>│   ├── typography.md
+<a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>│   ├── spacing.md
+<a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>│   ├── tokens.md
+<a id="__codelineno-0-51" name="__codelineno-0-51" href="#__codelineno-0-51"></a>│   └── design-system.md
+<a id="__codelineno-0-52" name="__codelineno-0-52" href="#__codelineno-0-52"></a>│
+<a id="__codelineno-0-53" name="__codelineno-0-53" href="#__codelineno-0-53"></a>└── traceability/
+<a id="__codelineno-0-54" name="__codelineno-0-54" href="#__codelineno-0-54"></a>    ├── spec-impact-matrix.md # Qual spec impacta qual — completo+
+<a id="__codelineno-0-55" name="__codelineno-0-55" href="#__codelineno-0-55"></a>    └── code-spec-matrix.md   # Arquivo de código → spec correspondente — completo+
 </code></pre></div>
 <hr />
 <h2 id="rastreabilidade">Rastreabilidade<a class="headerlink" href="#rastreabilidade" title="Permanent link">&para;</a></h2>
@@ -1287,6 +1296,9 @@
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a># Configuração pessoal do Reversa (nunca commitar)
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>.reversa/config.user.toml
 </code></pre></div>
+<hr />
+<h2 id="proximo-passo">Próximo passo<a class="headerlink" href="#proximo-passo" title="Permanent link">&para;</a></h2>
+<p>Specs em mãos? Veja <a href="../desenvolvendo-com-specs/">Desenvolvendo com as specs</a> para a ordem recomendada de construção do sistema.</p>
 
 
 

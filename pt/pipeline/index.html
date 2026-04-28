@@ -753,6 +753,34 @@
   
   
     <li class="md-nav__item">
+      <a href="../agentes/agents-help/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guia com analogias
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../agentes/reversa/" class="md-nav__link">
         
   
@@ -816,7 +844,7 @@
   <span class="md-ellipsis">
     
   
-    Arqueólogo
+    Archaeologist
   
 
     
@@ -844,7 +872,7 @@
   <span class="md-ellipsis">
     
   
-    Detetive
+    Detective
   
 
     
@@ -872,7 +900,7 @@
   <span class="md-ellipsis">
     
   
-    Arquiteto
+    Architect
   
 
     
@@ -900,7 +928,7 @@
   <span class="md-ellipsis">
     
   
-    Redator
+    Writer
   
 
     
@@ -928,35 +956,7 @@
   <span class="md-ellipsis">
     
   
-    Revisor
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../agentes/tracer/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Tracer
+    Reviewer
   
 
     
@@ -1054,62 +1054,6 @@
 
               
             
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../agentes/chronicler/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Chronicler
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../agentes/agents-help/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Guia com analogias
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1132,6 +1076,33 @@
     
   
     Saídas geradas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../desenvolvendo-com-specs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Desenvolvendo com as specs
   
 
     
@@ -1300,10 +1271,10 @@
 <h2 id="visao-geral">Visão geral<a class="headerlink" href="#visao-geral" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Fase 1          Fase 2        Fase 3              Fase 4        Fase 5
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Reconhecimento  Escavação     Interpretação       Geração       Revisão
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>   Scout        Arqueólogo    Detetive            Redator       Revisor
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                               Arquiteto
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>   Scout        Archaeologist    Detective            Writer       Reviewer
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                               Architect
 </code></pre></div>
-<p><strong>Agentes independentes</strong> que rodam em qualquer fase: <strong>Visor</strong>, <strong>Data Master</strong>, <strong>Design System</strong>, <strong>Tracer</strong></p>
+<p><strong>Agentes independentes</strong> que rodam em qualquer fase: <strong>Visor</strong>, <strong>Data Master</strong>, <strong>Design System</strong></p>
 <hr />
 <h2 id="fase-1-reconhecimento">Fase 1: Reconhecimento<a class="headerlink" href="#fase-1-reconhecimento" title="Permanent link">&para;</a></h2>
 <p><strong>Agente:</strong> Scout</p>
@@ -1315,11 +1286,12 @@
 <li>Estrutura de dados em JSON para os próximos agentes (<code>.reversa/context/surface.json</code>)</li>
 </ul>
 <p>Depois que o Scout termina, o Reversa usa o <code>surface.json</code> para personalizar a Fase 2: em vez de uma tarefa genérica "analisar o código", o plano vira uma tarefa por módulo identificado.</p>
+<p>Também é nesse momento que o Reversa apresenta o resumo do Scout e pergunta o <strong>nível de documentação</strong> (<code>doc_level</code>): essencial, completo ou detalhado. A escolha define quais artefatos cada agente vai gerar nas fases seguintes — veja <a href="../uso/#nível-de-documentação">Como usar</a> para a tabela completa.</p>
 <hr />
 <h2 id="fase-2-escavacao">Fase 2: Escavação<a class="headerlink" href="#fase-2-escavacao" title="Permanent link">&para;</a></h2>
-<p><strong>Agente:</strong> Arqueólogo</p>
-<p>O Arqueólogo escava o terreno módulo a módulo. Com paciência e precisão, cataloga cada artefato: funções, algoritmos, estruturas de dados, fluxos de controle. Ele não interpreta nem julga. Só descreve com precisão o que está lá.</p>
-<p><strong>Importante:</strong> o Arqueólogo roda um módulo por sessão, de propósito. Projetos grandes têm muitos módulos, e tentar analisar tudo de uma vez consome contexto e reduz a qualidade da análise.</p>
+<p><strong>Agente:</strong> Archaeologist</p>
+<p>O Archaeologist escava o terreno módulo a módulo. Com paciência e precisão, cataloga cada artefato: funções, algoritmos, estruturas de dados, fluxos de controle. Ele não interpreta nem julga. Só descreve com precisão o que está lá.</p>
+<p><strong>Importante:</strong> o Archaeologist roda um módulo por sessão, de propósito. Projetos grandes têm muitos módulos, e tentar analisar tudo de uma vez consome contexto e reduz a qualidade da análise.</p>
 <p>O que ele produz:</p>
 <ul>
 <li>Análise técnica consolidada (<code>code-analysis.md</code>)</li>
@@ -1329,10 +1301,10 @@
 </ul>
 <hr />
 <h2 id="fase-3-interpretacao">Fase 3: Interpretação<a class="headerlink" href="#fase-3-interpretacao" title="Permanent link">&para;</a></h2>
-<p><strong>Agentes:</strong> Detetive + Arquiteto</p>
+<p><strong>Agentes:</strong> Detective + Architect</p>
 <p>Aqui a análise deixa de ser descritiva e vira interpretativa. Dois agentes trabalham em paralelo nessa fase.</p>
-<p><strong>O Detetive</strong> é o Sherlock Holmes do time. Olha para o que o Arqueólogo catalogou e pergunta: <em>"Mas por que isso está aqui? Quem tomou essa decisão? O que o histórico git revela?"</em>. Extrai regras de negócio implícitas, ADRs retroativos, máquinas de estado e matrizes de permissão.</p>
-<p><strong>O Arquiteto</strong> é o cartógrafo. Sintetiza tudo em documentação arquitetural formal: diagramas C4 nos três níveis (Contexto, Containers, Componentes), ERD completo, mapa de integrações, dívidas técnicas.</p>
+<p><strong>O Detective</strong> é o Sherlock Holmes do time. Olha para o que o Archaeologist catalogou e pergunta: <em>"Mas por que isso está aqui? Quem tomou essa decisão? O que o histórico git revela?"</em>. Extrai regras de negócio implícitas, ADRs retroativos, máquinas de estado e matrizes de permissão.</p>
+<p><strong>O Architect</strong> é o cartógrafo. Sintetiza tudo em documentação arquitetural formal: diagramas C4 nos três níveis (Contexto, Containers, Componentes), ERD completo, mapa de integrações, dívidas técnicas.</p>
 <p>O que eles produzem:</p>
 <ul>
 <li>Domínio e regras de negócio (<code>domain.md</code>)</li>
@@ -1345,10 +1317,10 @@
 </ul>
 <hr />
 <h2 id="fase-4-geracao">Fase 4: Geração<a class="headerlink" href="#fase-4-geracao" title="Permanent link">&para;</a></h2>
-<p><strong>Agente:</strong> Redator</p>
-<p>O Redator é o tabelião do time. Transforma tudo que foi descoberto nas fases anteriores em contratos formais: especificações SDD por componente, specs OpenAPI para as APIs, user stories para os fluxos de usuário.</p>
+<p><strong>Agente:</strong> Writer</p>
+<p>O Writer é o tabelião do time. Transforma tudo que foi descoberto nas fases anteriores em contratos formais: especificações SDD por componente, specs OpenAPI para as APIs, user stories para os fluxos de usuário.</p>
 <p>Cada afirmação nas specs é marcada com a <a href="../escala-confianca/">escala de confiança</a>: 🟢 CONFIRMADO, 🟡 INFERIDO ou 🔴 LACUNA.</p>
-<p>O Redator não gera tudo de uma vez. Ele monta um plano, apresenta para você aprovar, e depois gera um arquivo por vez, esperando confirmação antes de continuar. Isso permite revisão incremental e evita desperdício de contexto.</p>
+<p>O Writer não gera tudo de uma vez. Ele monta um plano, apresenta para você aprovar, e depois gera um arquivo por vez, esperando confirmação antes de continuar. Isso permite revisão incremental e evita desperdício de contexto.</p>
 <p>O que ele produz:</p>
 <ul>
 <li>Specs por componente (<code>sdd/[componente].md</code>)</li>
@@ -1358,10 +1330,10 @@
 </ul>
 <hr />
 <h2 id="fase-5-revisao">Fase 5: Revisão<a class="headerlink" href="#fase-5-revisao" title="Permanent link">&para;</a></h2>
-<p><strong>Agente:</strong> Revisor</p>
-<p>O Revisor tenta furar as specs. Encontra contradições internas, conflitos entre specs diferentes, afirmações marcadas como 🟢 que são na verdade inferências, comportamentos óbvios não especificados.</p>
+<p><strong>Agente:</strong> Reviewer</p>
+<p>O Reviewer tenta furar as specs. Encontra contradições internas, conflitos entre specs diferentes, afirmações marcadas como 🟢 que são na verdade inferências, comportamentos óbvios não especificados.</p>
 <p>Ele também coleta as lacunas 🔴 que só você pode resolver e apresenta como perguntas para validação humana. Depois que você responde, ele atualiza as specs e gera o relatório final de confiança.</p>
-<p>Bônus: se o plugin do Codex estiver ativo na sessão, o Revisor pode solicitar uma revisão cruzada independente antes de fazer a sua própria análise.</p>
+<p>Bônus: se o plugin do Codex estiver ativo na sessão, o Reviewer pode solicitar uma revisão cruzada independente antes de fazer a sua própria análise.</p>
 <p>O que ele produz:</p>
 <ul>
 <li>Perguntas para validação (<code>questions.md</code>)</li>
@@ -1391,14 +1363,6 @@
 <tr>
 <td><strong>Design System</strong></td>
 <td>Quando houver arquivos CSS, temas ou screenshots de interface</td>
-</tr>
-<tr>
-<td><strong>Tracer</strong></td>
-<td>Quando existirem lacunas 🔴 que só o sistema em execução pode resolver</td>
-</tr>
-<tr>
-<td><strong>Chronicler</strong></td>
-<td>Para documentar alterações de código feitas durante o desenvolvimento</td>
 </tr>
 </tbody>
 </table>
