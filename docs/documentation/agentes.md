@@ -1,6 +1,6 @@
 # The 4 visual agents
 
-Four agents make up the Documentation Team, plus the orchestrator. Each one runs in fixed order, can be invoked standalone with `/reversa-docs-<role>`, and writes only inside `.reversa/documentation/`.
+Four agents make up the Documentation Team, plus the orchestrator. Each one runs in fixed order, can be invoked standalone with `/reversa-docs-<role>`, and writes only inside `_reversa_docs/`.
 
 ---
 

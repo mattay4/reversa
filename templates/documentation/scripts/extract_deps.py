@@ -7,8 +7,8 @@ Esqueleto da Onda 1. Análise real de imports por linguagem entra na TASK-07.
 Schema de saída: ver specs/reversa-docs/design.md, seção "Schema de deps.json".
 
 Uso:
-    python extract_deps.py --modules .reversa/documentation/assets/data/modules.json \
-                           --out .reversa/documentation/assets/data/deps.json
+    python extract_deps.py --modules _reversa_docs/assets/data/modules.json \
+                           --out _reversa_docs/assets/data/deps.json
 """
 
 import argparse

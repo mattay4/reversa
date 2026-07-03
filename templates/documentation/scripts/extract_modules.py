@@ -8,7 +8,7 @@ Schema de saída: ver specs/reversa-docs/design.md, seção
 "JSONs intermediários em assets/data/" → "Schema de modules.json".
 
 Uso:
-    python extract_modules.py --root . --out .reversa/documentation/assets/data/modules.json
+    python extract_modules.py --root . --out _reversa_docs/assets/data/modules.json
 """
 
 import argparse

@@ -6,7 +6,7 @@ Esqueleto da Onda 1. Extração de metadados (status, tamanho, autor) na TASK-10
 
 Uso:
     python list_specs.py --sdd-root _reversa_sdd \
-                         --out .reversa/documentation/assets/data/features-index.json
+                         --out _reversa_docs/assets/data/features-index.json
 """
 
 import argparse

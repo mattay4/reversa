@@ -55,10 +55,10 @@ Há um checkpoint `CONTINUAR` entre agentes. Use `--auto` para pular a entrevist
 
 ## Onde os artefatos ficam
 
-Tudo é gravado em `.reversa/documentation/`. O time **nunca** modifica artefatos do core (`_reversa_sdd/`, `.reversa/soul.md`, `.reversa/chronicle.md`), apenas lê.
+Tudo é gravado em `_reversa_docs/`. O time **nunca** modifica artefatos do core (`_reversa_sdd/`, `.reversa/soul.md`, `.reversa/chronicle.md`), apenas lê.
 
 ```
-.reversa/documentation/
+_reversa_docs/
 ├── index.html              (Publisher: hero, selo, nav)
 ├── arquitetura.html        (Mapper)
 ├── modulos.html            (Mapper)
@@ -78,7 +78,7 @@ Tudo é gravado em `.reversa/documentation/`. O time **nunca** modifica artefato
 └── .state.json             (telemetria do pipeline, hashes por página)
 ```
 
-Se `.reversa/documentation/` já existir, o orquestrador oferece seis opções de regeneração (manter, regenerar tudo, regenerar um agente ou página, refazer a entrevista, ...) e sempre cria `.backup-<timestamp>/` antes de sobrescrever.
+Se `_reversa_docs/` já existir, o orquestrador oferece seis opções de regeneração (manter, regenerar tudo, regenerar um agente ou página, refazer a entrevista, ...) e sempre cria `.backup-<timestamp>/` antes de sobrescrever.
 
 ---
 

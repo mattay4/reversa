@@ -6,7 +6,7 @@ Esqueleto da Onda 1. Parser real de markdown e classificação de eventos na TAS
 
 Uso:
     python convert_chronicle.py --src .reversa/chronicle.md \
-                                --out .reversa/documentation/assets/data/timeline.json
+                                --out _reversa_docs/assets/data/timeline.json
 """
 
 import argparse

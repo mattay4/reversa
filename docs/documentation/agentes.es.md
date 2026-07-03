@@ -1,6 +1,6 @@
 # Los 4 agentes visuales
 
-Cuatro agentes forman el Equipo de Documentación, más el orquestador. Cada uno corre en orden fijo, puede invocarse de forma independiente con `/reversa-docs-<rol>` y escribe solo dentro de `.reversa/documentation/`.
+Cuatro agentes forman el Equipo de Documentación, más el orquestador. Cada uno corre en orden fijo, puede invocarse de forma independiente con `/reversa-docs-<rol>` y escribe solo dentro de `_reversa_docs/`.
 
 ---
 

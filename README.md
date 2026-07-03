@@ -229,7 +229,7 @@ Use when the legacy "code" is not source code but a structured artifact like a v
 
 ### Documentation Team (HTML mini-site)
 
-After discovery completes, this team turns the extracted knowledge into a self-contained HTML mini-site under `.reversa/documentation/`. Run `/reversa-docs` to orchestrate the full team, or activate any agent in isolation to regenerate only its pages.
+After discovery completes, this team turns the extracted knowledge into a self-contained HTML mini-site under `_reversa_docs/`. Run `/reversa-docs` to orchestrate the full team, or activate any agent in isolation to regenerate only its pages.
 
 | Agent | Role |
 |-------|------|
@@ -309,7 +309,7 @@ _reversa_forward/
         └── cross-check.md
 ```
 
-The Documentation Team writes only inside `.reversa/documentation/` (HTML mini-site, fully offline).
+The Documentation Team writes only inside `_reversa_docs/` (HTML mini-site, fully offline).
 
 ### Confidence scale
 

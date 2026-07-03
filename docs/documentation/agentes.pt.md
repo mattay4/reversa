@@ -1,6 +1,6 @@
 # Os 4 agentes visuais
 
-Quatro agentes formam o Time de Documentação, mais o orquestrador. Cada um roda em ordem fixa, pode ser invocado avulso com `/reversa-docs-<papel>` e escreve apenas dentro de `.reversa/documentation/`.
+Quatro agentes formam o Time de Documentação, mais o orquestrador. Cada um roda em ordem fixa, pode ser invocado avulso com `/reversa-docs-<papel>` e escreve apenas dentro de `_reversa_docs/`.
 
 ---
 

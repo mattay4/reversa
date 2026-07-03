@@ -55,10 +55,10 @@ There is a `CONTINUAR` checkpoint between agents. Add `--auto` to skip the inter
 
 ## Where artifacts land
 
-Everything lands under `.reversa/documentation/`. The Team **never** modifies core artifacts (`_reversa_sdd/`, `.reversa/soul.md`, `.reversa/chronicle.md`), it only reads them.
+Everything lands under `_reversa_docs/`. The Team **never** modifies core artifacts (`_reversa_sdd/`, `.reversa/soul.md`, `.reversa/chronicle.md`), it only reads them.
 
 ```
-.reversa/documentation/
+_reversa_docs/
 ├── index.html              (Publisher: hero, seal, nav)
 ├── arquitetura.html        (Mapper)
 ├── modulos.html            (Mapper)
@@ -78,7 +78,7 @@ Everything lands under `.reversa/documentation/`. The Team **never** modifies co
 └── .state.json             (pipeline telemetry, hashes per page)
 ```
 
-If `.reversa/documentation/` already exists, the orchestrator offers six regeneration options (keep, regenerate all, regenerate a single agent or page, redo the interview, ...) and always creates a `.backup-<timestamp>/` before overwriting.
+If `_reversa_docs/` already exists, the orchestrator offers six regeneration options (keep, regenerate all, regenerate a single agent or page, redo the interview, ...) and always creates a `.backup-<timestamp>/` before overwriting.
 
 ---
 
