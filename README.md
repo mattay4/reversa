@@ -103,6 +103,7 @@ For other workflows, use the matching entry command:
 | Evolve the system one feature at a time, from spec to code | `/reversa-forward` |
 | Rebuild the legacy on a modern stack | `/reversa-migrate` |
 | Render the extracted knowledge as an HTML mini-site | `/reversa-docs` |
+| Track and fix defects with causal traceability | `/reversa-bug`, `/reversa-bug-fix` |
 | Estimate effort and pricing on top of the specs | `/reversa-pricing-profile`, `/reversa-pricing-size`, `/reversa-pricing-estimate` |
 
 Each orchestrator pauses between agents and asks for `CONTINUAR` before advancing, so you stay in control of every step.
@@ -137,7 +138,7 @@ For a **greenfield** project (no legacy to extract), start with `/reversa-new` i
 
 ## Agents
 
-Reversa organizes its agents in **seven specialized Teams**. The Discovery Team (Reversa Agents Core) is always installed; five Teams are pre-checked in the installer and Translators are opt-in.
+Reversa organizes its agents in **eight specialized Teams**. The Discovery Team (Reversa Agents Core) is always installed; six Teams are pre-checked in the installer and Translators are opt-in.
 
 | Team | Purpose | Entry command |
 |------|---------|---------------|
@@ -147,6 +148,7 @@ Reversa organizes its agents in **seven specialized Teams**. The Discovery Team 
 | **Migration Agents** | Turn legacy specs into a rebuild plan for a modern stack | `/reversa-migrate` |
 | **Pricing and Size Agents** | Estimate effort, size and pricing on top of the specs | `/reversa-pricing-*` |
 | **Documentation Team** | Render the extracted knowledge as a self-contained HTML mini-site | `/reversa-docs` |
+| **Bug Agents** | Track, debate and fix defects with causal traceability to the specs | `/reversa-bug` |
 
 ### Discovery Team, required
 
@@ -241,6 +243,18 @@ After discovery completes, this team turns the extracted knowledge into a self-c
 
 The team brings 5 shared skills (`reversa-arquitetura-3d`, `reversa-selo-generativo`, `reversa-highcharts-visualizer`, `reversa-especialista-d3`, `reversa-image-prompt-json`) which are installed automatically alongside the team. The output is a static mini-site that opens via `file://` with no server required.
 
+### Bug Agents
+
+A repository-native causal defect memory: every bug is a self-contained folder under `_reversa_bugs/bugs/` with a YAML front matter record traceable to the specs (`SPEC ↔ CODE ↔ TEST ↔ BUG`), evidence, optional multi-agent debate state and the correction change set. Registering and fixing are strictly separate acts.
+
+| Agent | Role |
+|-------|------|
+| **Bug** | Intake, triage, dedupe, classification and initial traceability. Never fixes. Activated via `/reversa-bug` |
+| **Bug Fix** | Lifecycle orchestrator: mitigation, reproduction capsule, evidence-based root cause, two approval gates (failing tests, then the change set), spec verdict with versioned addenda, closure policy. Activated via `/reversa-bug-fix` |
+| **Bug Debate** | Fixed-epoch multi-agent debate with an isolated judge, in three modes (`diagnosis`, `repair`, `spec`). Always opt-in, with cost shown upfront; external harnesses (Codex, Gemini CLI, ...) may join only with explicit consent. Activated via `/reversa-bug-debate` |
+| **Depth Inspection** | Deep sweep of a problematic feature through specialized lenses (spec conformance, data flow, contracts, error states, test coverage, concurrency). Diagnosis only; confirmed findings become registered bugs. Activated via `/reversa-depth-inspection` |
+| **Bug Graph** | Regenerates the derived views: index, compact catalog, sparse relation matrix, mermaid graph with clusters and impact score, and the BUG ↔ SPEC traceability matrix on both ends (`_reversa_bugs/generated/` and `_reversa_sdd/traceability/bugs.md`). Activated via `/reversa-bug-graph` |
+
 ---
 
 ## What is generated
@@ -310,6 +324,8 @@ _reversa_forward/
 ```
 
 The Documentation Team writes only inside `_reversa_docs/` (HTML mini-site, fully offline).
+
+Bug Agents write only inside `_reversa_bugs/` (one folder per bug, plus generated views), spec addenda in `_reversa_sdd/addenda/` and the generated mirror `_reversa_sdd/traceability/bugs.md`. Original specs are never edited; project code changes only through approval gates with explicit diffs.
 
 ### Confidence scale
 
