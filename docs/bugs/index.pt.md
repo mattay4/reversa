@@ -19,22 +19,22 @@ O Time funciona melhor sobre uma extração (`_reversa_sdd/`), mas degrada bem: 
 ## Os 5 comandos
 
 ```
-/reversa-bug ──registra──► _reversa_bugs/bugs/BUG-.../   ◄──registra achados── /reversa-depth-inspection
+/reversa-debugger ──registra──► _reversa_bugs/bugs/BUG-.../   ◄──registra achados── /reversa-depth-inspection
       │
       ▼
-/reversa-bug-fix ──opt-in──► /reversa-bug-debate (diagnosis | repair | spec)
+/reversa-debugger-fix ──opt-in──► /reversa-debugger-debate (diagnosis | repair | spec)
       │
       ▼ fecha pela closure policy
-/reversa-bug-graph ──regenera──► generated/* + _reversa_sdd/traceability/bugs.md
+/reversa-debugger-graph ──regenera──► generated/* + _reversa_sdd/traceability/bugs.md
 ```
 
 | Agente | Papel |
 |--------|-------|
-| **Bug** | Intake, triagem, dedupe, classificação (`taxonomy.yaml`), rastreabilidade inicial e suspeita de segurança. Nunca corrige. `/reversa-bug` |
-| **Bug Fix** | Orquestrador do ciclo de vida: mitigação opcional, cápsula de reprodução, causa raiz com evidências (com `git bisect` para regressões), dois gates de aprovação (testes que falham primeiro, depois o change set de correção), veredito de spec, closure policy. `/reversa-bug-fix` |
-| **Bug Debate** | Debate multiagente em épocas fixas com juiz isolado, em três modos: `diagnosis` (hipóteses causais concorrentes), `repair` (estratégias concorrentes), `spec` (divergência código vs spec; termina em recomendação, a decisão é humana). Sempre opt-in, com custo mostrado antes. Harness externos (Codex, Gemini CLI, OpenCode) só entram como debatedores com aceite explícito. `/reversa-bug-debate` |
+| **Bug** | Intake, triagem, dedupe, classificação (`taxonomy.yaml`), rastreabilidade inicial e suspeita de segurança. Nunca corrige. `/reversa-debugger` |
+| **Bug Fix** | Orquestrador do ciclo de vida: mitigação opcional, cápsula de reprodução, causa raiz com evidências (com `git bisect` para regressões), dois gates de aprovação (testes que falham primeiro, depois o change set de correção), veredito de spec, closure policy. `/reversa-debugger-fix` |
+| **Bug Debate** | Debate multiagente em épocas fixas com juiz isolado, em três modos: `diagnosis` (hipóteses causais concorrentes), `repair` (estratégias concorrentes), `spec` (divergência código vs spec; termina em recomendação, a decisão é humana). Sempre opt-in, com custo mostrado antes. Harness externos (Codex, Gemini CLI, OpenCode) só entram como debatedores com aceite explícito. `/reversa-debugger-debate` |
 | **Depth Inspection** | Pente-fino de uma feature problemática com lentes especializadas: conformidade com a spec, fluxo de dados, contratos, estados de erro, cobertura de testes, concorrência. Só diagnóstico; achados confirmados viram bugs registrados. `/reversa-depth-inspection` |
-| **Bug Graph** | Regenera todas as views derivadas: índice, catálogo compacto (`catalog.jsonl`), matriz esparsa de relações, grafo mermaid com clusters e impact score, e a matriz de rastreabilidade BUG ↔ SPEC nas duas pontas. Valida invariantes e para com erro explícito em inconsistência. `/reversa-bug-graph` |
+| **Bug Graph** | Regenera todas as views derivadas: índice, catálogo compacto (`catalog.jsonl`), matriz esparsa de relações, grafo mermaid com clusters e impact score, e a matriz de rastreabilidade BUG ↔ SPEC nas duas pontas. Valida invariantes e para com erro explícito em inconsistência. `/reversa-debugger-graph` |
 
 ---
 

@@ -17,7 +17,7 @@ Você é o inspetor profundo. Quando uma feature "vive dando problema", um bug p
 ## Antes de começar
 
 1. Leia `.reversa/state.json` (`output_folder`, `chat_language`, `doc_language`)
-2. Se `_reversa_bugs/` não existir, execute o bootstrap do registro descrito no `/reversa-bug` (README com closure policy, taxonomy.yaml, pastas)
+2. Se `_reversa_bugs/` não existir, execute o bootstrap do registro descrito no `/reversa-debugger` (README com closure policy, taxonomy.yaml, pastas)
 3. Pergunte a feature alvo se não veio no argumento, oferecendo as features conhecidas do `taxonomy.yaml` como opções + "Outro"
 
 ## Etapa 1: mapa da feature
@@ -68,7 +68,7 @@ Depois que TODAS as lentes terminarem:
 1. **Merge e dedupe** dos achados entre lentes e contra os bugs já registrados (mesma spec, mesmos arquivos, mesmo sintoma)
 2. **Critério de confirmação**: vira bug apenas o achado com desvio observável entre esperado e real, OU prova estática com caminho causal completo e fonte clara do comportamento esperado. Dívida técnica, suspeita e cobertura baixa ficam no relatório com `promoted_to: null`.
 3. Apresente a lista de candidatos ao usuário (menu multiescolha: registrar todos os confirmados, escolher quais, ou "Outro") antes de criar
-4. Registre os aceitos EM SÉRIE seguindo o protocolo do `/reversa-bug` (IDs merge-safe atribuídos um a um, `origin.type: inspection`, rastreabilidade e relações preenchidas). Achado com sinal de segurança segue o fluxo restrito.
+4. Registre os aceitos EM SÉRIE seguindo o protocolo do `/reversa-debugger` (IDs merge-safe atribuídos um a um, `origin.type: inspection`, rastreabilidade e relações preenchidas). Achado com sinal de segurança segue o fluxo restrito.
 
 ## Etapa 4: relatório
 
@@ -79,7 +79,7 @@ Escreva `_reversa_bugs/inspections/<feature>/report.md`:
 3. Clusters: achados convergindo no mesmo componente ou na mesma cadeia de specs (indício de causa estrutural comum)
 4. O que NÃO foi coberto (lentes condicionais não ativadas, áreas sem acesso), sem truncamento silencioso
 
-Atualize as views pelo protocolo do `/reversa-bug-graph`.
+Atualize as views pelo protocolo do `/reversa-debugger-graph`.
 
 ## Relatório final ao usuário
 
@@ -89,7 +89,7 @@ Atualize as views pelo protocolo do `/reversa-bug-graph`.
 
 Termine com:
 
-> Digite **CONTINUAR** para corrigir o bug de maior impacto com `/reversa-bug-fix`, ou rode `/reversa-bug-graph` para ver o panorama.
+> Digite **CONTINUAR** para corrigir o bug de maior impacto com `/reversa-debugger-fix`, ou rode `/reversa-debugger-graph` para ver o panorama.
 
 ## Regra absoluta
 

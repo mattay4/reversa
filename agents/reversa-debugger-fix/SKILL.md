@@ -1,6 +1,6 @@
 ---
-name: reversa-bug-fix
-description: Corretor de bugs do Reversa, orquestrador do ciclo de vida do defeito. Reproduz, investiga causa raiz com evidências, oferece debate multiagente opt-in, cria testes de reprodução e regressão, aplica o Correction Change Set com diffs aprovados em dois gates, dá o veredito de spec (com adendo versionado quando a spec muda) e fecha conforme a closure policy. Use quando o usuário digitar "/reversa-bug-fix", "reversa-bug-fix", "corrigir o bug", "consertar o BUG-XXX" ou pedir a correção de um bug registrado. Exige bug registrado via `/reversa-bug`.
+name: reversa-debugger-fix
+description: Corretor de bugs do Reversa, orquestrador do ciclo de vida do defeito. Reproduz, investiga causa raiz com evidências, oferece debate multiagente opt-in, cria testes de reprodução e regressão, aplica o Correction Change Set com diffs aprovados em dois gates, dá o veredito de spec (com adendo versionado quando a spec muda) e fecha conforme a closure policy. Use quando o usuário digitar "/reversa-debugger-fix", "reversa-debugger-fix", "corrigir o bug", "consertar o BUG-XXX" ou pedir a correção de um bug registrado. Exige bug registrado via `/reversa-debugger`.
 license: MIT
 compatibility: Claude Code, Codex, Cursor, Gemini CLI e demais agentes compatíveis com Agent Skills.
 metadata:
@@ -17,12 +17,12 @@ Você é o corretor. Sua missão é levar um bug registrado da triagem até o fe
 ## Antes de começar
 
 1. Leia `.reversa/state.json` (`output_folder`, `chat_language`, `doc_language`, `user_name`)
-2. Leia `_reversa_bugs/README.md` (closure policy, control_mode) e o schema em `references/../reversa-bug/references/bug-schema.md` se disponível; senão siga o contrato descrito no README do registro
-3. Se `_reversa_bugs/` não existir, aborte: "Não há registro de bugs neste projeto. Rode `/reversa-bug` primeiro."
+2. Leia `_reversa_bugs/README.md` (closure policy, control_mode) e o schema em `references/../reversa-debugger/references/bug-schema.md` se disponível; senão siga o contrato descrito no README do registro
+3. Se `_reversa_bugs/` não existir, aborte: "Não há registro de bugs neste projeto. Rode `/reversa-debugger` primeiro."
 
 ## Seleção do bug
 
-1. Com argumento (`/reversa-bug-fix BUG-20260715-A7K3` ou `/reversa-bug-fix BUG-007`): resolva por ID canônico ou `display_number`
+1. Com argumento (`/reversa-debugger-fix BUG-20260715-A7K3` ou `/reversa-debugger-fix BUG-007`): resolva por ID canônico ou `display_number`
 2. Sem argumento: leia `generated/catalog.jsonl` (ou varra `bugs/*/bug.md`), calcule o impact score (só arestas `supported`/`confirmed`) e **sugira** o bug de maior impacto sistêmico entre os abertos, explicando o porquê. A escolha é do usuário (menu com top 3 + "Outro").
 3. Bug `resolved` ou com `blocking` ativo: informe e pergunte como proceder.
 
@@ -72,7 +72,7 @@ Causa raiz: <resumo> (estado: <state>). Risco da mudança: <classificação> (<m
   [1] Correção direta
       Sigo com a estratégia que propus. Mais rápido.
   [2] Debate multiagente
-      /reversa-bug-debate em modo <diagnosis|repair> com N agentes por R rodadas + juiz.
+      /reversa-debugger-debate em modo <diagnosis|repair> com N agentes por R rodadas + juiz.
       Atenção: demora e custa mais (padrão 3x2 = 6 chamadas + juiz).
       <se detectado: "Detectei <harness> instalado: se você aceitar, pode entrar como debatedor.">
   [3] Outro
@@ -112,7 +112,7 @@ Diff do código e diff/adendo da spec ficam registrados **JUNTOS** na Resolution
    - `package`: acrescente `delivery` (merge, versão publicada) e `versions`/`backports`; bug segue `active`/`delivering` até publicar
    - `production-service`: acrescente `delivery` e `post_fix_observation`; bug fica `active`/`observing` até a janela confirmar não recorrência (informe o usuário como encerrar a observação numa próxima chamada)
 3. Só marque `status: resolved` + `closure.satisfied: true` quando a política estiver satisfeita. `resolution_kind: fixed` exige causa `confirmed` + regressão + veredito.
-4. Atualize as views (`generated/` e `_reversa_sdd/traceability/bugs.md`) pelo protocolo do `/reversa-bug-graph`
+4. Atualize as views (`generated/` e `_reversa_sdd/traceability/bugs.md`) pelo protocolo do `/reversa-debugger-graph`
 
 ## Relatório final ao usuário
 
@@ -122,7 +122,7 @@ Diff do código e diff/adendo da spec ficam registrados **JUNTOS** na Resolution
 
 Termine com:
 
-> Digite **CONTINUAR** para atualizar as views com `/reversa-bug-graph`, corrigir o próximo bug com `/reversa-bug-fix`, ou encerrar.
+> Digite **CONTINUAR** para atualizar as views com `/reversa-debugger-graph`, corrigir o próximo bug com `/reversa-debugger-fix`, ou encerrar.
 
 ## Regra absoluta
 

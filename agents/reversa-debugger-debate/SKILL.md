@@ -1,6 +1,6 @@
 ---
-name: reversa-bug-debate
-description: Debate multiagente do Time Reversa Bugs, em épocas fixas com juiz isolado, para decidir diagnóstico, estratégia de correção ou veredito de spec de um bug registrado. N solvers independentes debatem por R rodadas com snapshot síncrono; um juiz que não participou sintetiza. Sempre opt-in, com custo estimado antes. Pode incluir outros harness (Codex, Gemini CLI, OpenCode) como debatedores, somente com aceite explícito do usuário. Use quando o usuário digitar "/reversa-bug-debate", "reversa-bug-debate", "abrir debate sobre o bug", "debater a correção" ou aceitar a oferta de debate do /reversa-bug-fix.
+name: reversa-debugger-debate
+description: Debate multiagente do Time Reversa Bugs, em épocas fixas com juiz isolado, para decidir diagnóstico, estratégia de correção ou veredito de spec de um bug registrado. N solvers independentes debatem por R rodadas com snapshot síncrono; um juiz que não participou sintetiza. Sempre opt-in, com custo estimado antes. Pode incluir outros harness (Codex, Gemini CLI, OpenCode) como debatedores, somente com aceite explícito do usuário. Use quando o usuário digitar "/reversa-debugger-debate", "reversa-debugger-debate", "abrir debate sobre o bug", "debater a correção" ou aceitar a oferta de debate do /reversa-debugger-fix.
 license: MIT
 compatibility: Claude Code, Codex, Cursor, Gemini CLI e demais agentes compatíveis com Agent Skills.
 metadata:
@@ -17,7 +17,7 @@ Você é o moderador do debate. Vários agentes independentes que se criticam pr
 ## Antes de começar
 
 1. Leia `.reversa/state.json` (`output_folder`, `chat_language`, `doc_language`)
-2. Resolva o bug alvo (ID canônico ou display_number). Sem bug registrado, aborte apontando `/reversa-bug`. Leia o `bug.md`, as evidências e a spec efetiva vinculada
+2. Resolva o bug alvo (ID canônico ou display_number). Sem bug registrado, aborte apontando `/reversa-debugger`. Leia o `bug.md`, as evidências e a spec efetiva vinculada
 3. Se `visibility: restricted`: harness externos ficam PROIBIDOS neste debate e nenhum detalhe explorável sai da pasta do bug
 
 ## Setup (entradas travadas para a execução inteira)
@@ -62,11 +62,11 @@ Estado em `_reversa_bugs/bugs/<ID>/debate/`. Escreva `problema.md` com modo, N, 
 
 1. Modo, N, R, participantes (e engines externas, se aceitas), custo executado
 2. A recomendação do juiz (cole o essencial de `resposta-final.md`)
-3. No modo `spec`: deixe explícito que é recomendação e a decisão de veredito é do usuário no `/reversa-bug-fix`
+3. No modo `spec`: deixe explícito que é recomendação e a decisão de veredito é do usuário no `/reversa-debugger-fix`
 
 Termine com:
 
-> Digite **CONTINUAR** para voltar ao `/reversa-bug-fix <ID>` e executar a estratégia recomendada, ou peça outra rodada de debate.
+> Digite **CONTINUAR** para voltar ao `/reversa-debugger-fix <ID>` e executar a estratégia recomendada, ou peça outra rodada de debate.
 
 ## Regra absoluta
 

@@ -103,7 +103,7 @@ For other workflows, use the matching entry command:
 | Evolve the system one feature at a time, from spec to code | `/reversa-forward` |
 | Rebuild the legacy on a modern stack | `/reversa-migrate` |
 | Render the extracted knowledge as an HTML mini-site | `/reversa-docs` |
-| Track and fix defects with causal traceability | `/reversa-bug`, `/reversa-bug-fix` |
+| Track and fix defects with causal traceability | `/reversa-debugger`, `/reversa-debugger-fix` |
 | Estimate effort and pricing on top of the specs | `/reversa-pricing-profile`, `/reversa-pricing-size`, `/reversa-pricing-estimate` |
 
 Each orchestrator pauses between agents and asks for `CONTINUAR` before advancing, so you stay in control of every step.
@@ -148,7 +148,7 @@ Reversa organizes its agents in **eight specialized Teams**. The Discovery Team 
 | **Migration Agents** | Turn legacy specs into a rebuild plan for a modern stack | `/reversa-migrate` |
 | **Pricing and Size Agents** | Estimate effort, size and pricing on top of the specs | `/reversa-pricing-*` |
 | **Documentation Team** | Render the extracted knowledge as a self-contained HTML mini-site | `/reversa-docs` |
-| **Bug Agents** | Track, debate and fix defects with causal traceability to the specs | `/reversa-bug` |
+| **Bug Agents** | Track, debate and fix defects with causal traceability to the specs | `/reversa-debugger` |
 
 ### Discovery Team, required
 
@@ -249,11 +249,11 @@ A repository-native causal defect memory: every bug is a self-contained folder u
 
 | Agent | Role |
 |-------|------|
-| **Bug** | Intake, triage, dedupe, classification and initial traceability. Never fixes. Activated via `/reversa-bug` |
-| **Bug Fix** | Lifecycle orchestrator: mitigation, reproduction capsule, evidence-based root cause, two approval gates (failing tests, then the change set), spec verdict with versioned addenda, closure policy. Activated via `/reversa-bug-fix` |
-| **Bug Debate** | Fixed-epoch multi-agent debate with an isolated judge, in three modes (`diagnosis`, `repair`, `spec`). Always opt-in, with cost shown upfront; external harnesses (Codex, Gemini CLI, ...) may join only with explicit consent. Activated via `/reversa-bug-debate` |
+| **Bug** | Intake, triage, dedupe, classification and initial traceability. Never fixes. Activated via `/reversa-debugger` |
+| **Bug Fix** | Lifecycle orchestrator: mitigation, reproduction capsule, evidence-based root cause, two approval gates (failing tests, then the change set), spec verdict with versioned addenda, closure policy. Activated via `/reversa-debugger-fix` |
+| **Bug Debate** | Fixed-epoch multi-agent debate with an isolated judge, in three modes (`diagnosis`, `repair`, `spec`). Always opt-in, with cost shown upfront; external harnesses (Codex, Gemini CLI, ...) may join only with explicit consent. Activated via `/reversa-debugger-debate` |
 | **Depth Inspection** | Deep sweep of a problematic feature through specialized lenses (spec conformance, data flow, contracts, error states, test coverage, concurrency). Diagnosis only; confirmed findings become registered bugs. Activated via `/reversa-depth-inspection` |
-| **Bug Graph** | Regenerates the derived views: index, compact catalog, sparse relation matrix, mermaid graph with clusters and impact score, and the BUG ↔ SPEC traceability matrix on both ends (`_reversa_bugs/generated/` and `_reversa_sdd/traceability/bugs.md`). Activated via `/reversa-bug-graph` |
+| **Bug Graph** | Regenerates the derived views: index, compact catalog, sparse relation matrix, mermaid graph with clusters and impact score, and the BUG ↔ SPEC traceability matrix on both ends (`_reversa_bugs/generated/` and `_reversa_sdd/traceability/bugs.md`). Activated via `/reversa-debugger-graph` |
 
 ---
 

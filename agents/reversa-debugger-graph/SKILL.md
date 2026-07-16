@@ -1,6 +1,6 @@
 ---
-name: reversa-bug-graph
-description: Gerador de views do Time Reversa Bugs. Varre os bug.md (source of truth), valida invariantes e regenera as projeções: índice por status/phase, catálogo compacto, matriz esparsa de relações BUG↔BUG, grafo mermaid com clusters e impact score, e a matriz de rastreabilidade BUG↔SPEC nas duas pontas (incluindo o espelho em `_reversa_sdd/traceability/bugs.md`). Use quando o usuário digitar "/reversa-bug-graph", "reversa-bug-graph", "panorama dos bugs", "grafo de bugs", "regenerar índice de bugs" ou pedir a matriz de rastreabilidade de bugs.
+name: reversa-debugger-graph
+description: Gerador de views do Time Reversa Bugs. Varre os bug.md (source of truth), valida invariantes e regenera as projeções: índice por status/phase, catálogo compacto, matriz esparsa de relações BUG↔BUG, grafo mermaid com clusters e impact score, e a matriz de rastreabilidade BUG↔SPEC nas duas pontas (incluindo o espelho em `_reversa_sdd/traceability/bugs.md`). Use quando o usuário digitar "/reversa-debugger-graph", "reversa-debugger-graph", "panorama dos bugs", "grafo de bugs", "regenerar índice de bugs" ou pedir a matriz de rastreabilidade de bugs.
 license: MIT
 compatibility: Claude Code, Codex, Cursor, Gemini CLI e demais agentes compatíveis com Agent Skills.
 metadata:
@@ -17,7 +17,7 @@ Você é o cartógrafo dos defeitos. Os `bug.md` são a única fonte de verdade;
 ## Antes de começar
 
 1. Leia `.reversa/state.json` (`output_folder`, `doc_language`)
-2. Se `_reversa_bugs/bugs/` não existir ou estiver vazia, informe que não há bugs registrados e aponte `/reversa-bug`
+2. Se `_reversa_bugs/bugs/` não existir ou estiver vazia, informe que não há bugs registrados e aponte `/reversa-debugger`
 
 ## Etapa 1: varredura e validação
 
@@ -32,7 +32,7 @@ Você é o cartógrafo dos defeitos. Os `bug.md` são a única fonte de verdade;
 
 ## Etapa 2: views em `generated/`
 
-Todas com cabeçalho `<!-- GENERATED, DO NOT EDIT: regenerado por /reversa-bug-graph em <ISO 8601> a partir de N bugs -->`. Escrita atômica.
+Todas com cabeçalho `<!-- GENERATED, DO NOT EDIT: regenerado por /reversa-debugger-graph em <ISO 8601> a partir de N bugs -->`. Escrita atômica.
 
 ### catalog.jsonl
 Uma linha JSON por bug: front matter normalizado + `path` calculado. É o índice para busca em duas etapas (filtrar aqui, ler o corpo só dos candidatos). Nunca é source of truth.
@@ -72,7 +72,7 @@ Gere `_reversa_sdd/traceability/bugs.md` (crie a pasta `traceability/` se não e
 
 Termine com:
 
-> Digite **CONTINUAR** para corrigir o bug de maior impacto com `/reversa-bug-fix <ID>`, registrar um novo com `/reversa-bug`, ou encerrar.
+> Digite **CONTINUAR** para corrigir o bug de maior impacto com `/reversa-debugger-fix <ID>`, registrar um novo com `/reversa-debugger`, ou encerrar.
 
 ## Regra absoluta
 

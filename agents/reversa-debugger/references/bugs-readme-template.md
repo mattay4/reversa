@@ -28,7 +28,7 @@ _reversa_bugs/
 │   ├── bug.md                   registro canônico
 │   ├── evidence/  ├── debate/  └── fix/
 ├── inspections/<feature>/       relatórios do pente-fino
-└── generated/                   views regeneradas pelo /reversa-bug-graph (não editar à mão)
+└── generated/                   views regeneradas pelo /reversa-debugger-graph (não editar à mão)
 ```
 
 ## Ciclo de vida
@@ -52,7 +52,7 @@ Um bug NÃO pode ser `resolved: fixed` com `traceability.specs`, `root_cause` (c
 
 ## Protocolo dos agentes
 
-1. Registrar (`/reversa-bug`) NUNCA corrige. Corrigir (`/reversa-bug-fix`) segue dois gates de
+1. Registrar (`/reversa-debugger`) NUNCA corrige. Corrigir (`/reversa-debugger-fix`) segue dois gates de
    aprovação com diff (testes que falham; change set que faz os testes passarem).
 2. A spec original NUNCA é editada. Mudança de spec vira adendo versionado e imutável em
    `<output_folder>/addenda/bug-<ID>-vNNN.md`, com decisão humana registrada.
@@ -65,4 +65,4 @@ Um bug NÃO pode ser `resolved: fixed` com `traceability.specs`, `root_cause` (c
 - ID canônico: `BUG-<YYYYMMDD>-<sufixo>` (merge-safe). `display_number` é apelido humano.
 - Referências sempre por ID; as views resolvem o caminho.
 - Evidências em `evidence/`, nunca logs gigantes dentro do Markdown.
-- Schema completo: ver `bug-schema` na documentação do Reversa (agents/reversa-bug/references/).
+- Schema completo: ver `bug-schema` na documentação do Reversa (agents/reversa-debugger/references/).

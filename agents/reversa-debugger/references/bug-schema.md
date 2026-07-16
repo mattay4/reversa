@@ -107,7 +107,7 @@ Blocos opcionais (só quando o contexto existe): `mitigation` (kind, applied_at,
     tabela do change set, diffs de código e spec JUNTOS, testes de reprodução e regressão)
 11. `## Agent Notes` (restrições para quem for corrigir; propostas de taxonomia)
 
-## Invariantes (o /reversa-bug-graph valida e PARA com erro, nunca conserta em silêncio)
+## Invariantes (o /reversa-debugger-graph valida e PARA com erro, nunca conserta em silêncio)
 
 - `status: resolved` exige `resolution_kind` preenchido e `closure.satisfied: true`
 - `resolution_kind: fixed` exige `root_cause.state: confirmed`, `regression_tests` não vazio e `spec_verdict` preenchido

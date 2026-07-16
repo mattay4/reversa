@@ -1,6 +1,6 @@
 ---
-name: reversa-bug
-description: Registrador de bugs do Reversa. Faz intake, triagem, dedupe, classificação, rastreabilidade SPEC↔CODE↔TEST↔BUG e correlação BUG↔BUG, criando a pasta única do bug em `_reversa_bugs/bugs/`. Nunca corrige. Use quando o usuário digitar "/reversa-bug", "reversa-bug", "registrar bug", "reportar erro", "documentar um bug", "achei um erro no sistema" ou descrever um defeito pedindo para registrá-lo. Ponto de entrada do Time Reversa Bugs; a correção é ato separado via `/reversa-bug-fix`.
+name: reversa-debugger
+description: Registrador de bugs do Reversa. Faz intake, triagem, dedupe, classificação, rastreabilidade SPEC↔CODE↔TEST↔BUG e correlação BUG↔BUG, criando a pasta única do bug em `_reversa_bugs/bugs/`. Nunca corrige. Use quando o usuário digitar "/reversa-debugger", "reversa-debugger", "registrar bug", "reportar erro", "documentar um bug", "achei um erro no sistema" ou descrever um defeito pedindo para registrá-lo. Ponto de entrada do Time Reversa Bugs; a correção é ato separado via `/reversa-debugger-fix`.
 license: MIT
 compatibility: Claude Code, Codex, Cursor, Gemini CLI e demais agentes compatíveis com Agent Skills.
 metadata:
@@ -12,7 +12,7 @@ metadata:
   role: orchestrator
 ---
 
-Você é o registrador de bugs. Sua missão é transformar um relato de defeito em um registro canônico rastreável: um `bug.md` com front matter YAML dentro de uma pasta única por bug, ligado à spec que define o comportamento esperado, ao código suspeito e aos bugs relacionados. **Você NUNCA corrige nada.** Documentar e corrigir são atos brutalmente separados; a correção é do `/reversa-bug-fix`.
+Você é o registrador de bugs. Sua missão é transformar um relato de defeito em um registro canônico rastreável: um `bug.md` com front matter YAML dentro de uma pasta única por bug, ligado à spec que define o comportamento esperado, ao código suspeito e aos bugs relacionados. **Você NUNCA corrige nada.** Documentar e corrigir são atos brutalmente separados; a correção é do `/reversa-debugger-fix`.
 
 ## Antes de começar
 
@@ -98,7 +98,7 @@ Escrita atômica (tempfile + rename, UTF-8 sem BOM).
 
 ### 8. Views
 
-Atualize as views de `generated/` e o espelho `_reversa_sdd/traceability/bugs.md` seguindo o protocolo do `/reversa-bug-graph` (ou informe o usuário para rodá-lo, se preferir manter o registro rápido). Nunca edite views à mão fora do protocolo.
+Atualize as views de `generated/` e o espelho `_reversa_sdd/traceability/bugs.md` seguindo o protocolo do `/reversa-debugger-graph` (ou informe o usuário para rodá-lo, se preferir manter o registro rápido). Nunca edite views à mão fora do protocolo.
 
 ## Relatório final ao usuário
 
@@ -110,7 +110,7 @@ Atualize as views de `generated/` e o espelho `_reversa_sdd/traceability/bugs.md
 
 Termine com:
 
-> Digite **CONTINUAR** para prosseguir com `/reversa-bug-fix <ID>`, ou registre outro bug com `/reversa-bug`. Para o panorama geral, rode `/reversa-bug-graph`.
+> Digite **CONTINUAR** para prosseguir com `/reversa-debugger-fix <ID>`, ou registre outro bug com `/reversa-debugger`. Para o panorama geral, rode `/reversa-debugger-graph`.
 
 ## Regra absoluta
 

@@ -19,22 +19,22 @@ The Team works best on top of an extraction (`_reversa_sdd/`), but degrades grac
 ## The 5 commands
 
 ```
-/reversa-bug ──registers──► _reversa_bugs/bugs/BUG-.../   ◄──registers findings── /reversa-depth-inspection
+/reversa-debugger ──registers──► _reversa_bugs/bugs/BUG-.../   ◄──registers findings── /reversa-depth-inspection
       │
       ▼
-/reversa-bug-fix ──opt-in──► /reversa-bug-debate (diagnosis | repair | spec)
+/reversa-debugger-fix ──opt-in──► /reversa-debugger-debate (diagnosis | repair | spec)
       │
       ▼ closes per closure policy
-/reversa-bug-graph ──regenerates──► generated/* + _reversa_sdd/traceability/bugs.md
+/reversa-debugger-graph ──regenerates──► generated/* + _reversa_sdd/traceability/bugs.md
 ```
 
 | Agent | Role |
 |-------|------|
-| **Bug** | Intake, triage, dedupe, classification (`taxonomy.yaml`), initial traceability and security suspicion. Never fixes. `/reversa-bug` |
-| **Bug Fix** | Lifecycle orchestrator: optional mitigation, reproduction capsule, evidence-based root cause (with `git bisect` for regressions), two approval gates (failing tests first, then the correction change set), spec verdict, closure policy. `/reversa-bug-fix` |
-| **Bug Debate** | Fixed-epoch multi-agent debate with an isolated judge, in three modes: `diagnosis` (competing causal hypotheses), `repair` (competing strategies), `spec` (code vs spec divergence; ends in a recommendation, the decision is human). Always opt-in with cost shown upfront. External harnesses (Codex, Gemini CLI, OpenCode) may join as debaters only with explicit consent. `/reversa-bug-debate` |
+| **Bug** | Intake, triage, dedupe, classification (`taxonomy.yaml`), initial traceability and security suspicion. Never fixes. `/reversa-debugger` |
+| **Bug Fix** | Lifecycle orchestrator: optional mitigation, reproduction capsule, evidence-based root cause (with `git bisect` for regressions), two approval gates (failing tests first, then the correction change set), spec verdict, closure policy. `/reversa-debugger-fix` |
+| **Bug Debate** | Fixed-epoch multi-agent debate with an isolated judge, in three modes: `diagnosis` (competing causal hypotheses), `repair` (competing strategies), `spec` (code vs spec divergence; ends in a recommendation, the decision is human). Always opt-in with cost shown upfront. External harnesses (Codex, Gemini CLI, OpenCode) may join as debaters only with explicit consent. `/reversa-debugger-debate` |
 | **Depth Inspection** | Deep sweep of a problematic feature through specialized lenses: spec conformance, data flow, contracts, error states, test coverage, concurrency. Diagnosis only; confirmed findings become registered bugs. `/reversa-depth-inspection` |
-| **Bug Graph** | Regenerates all derived views: index, compact catalog (`catalog.jsonl`), sparse relation matrix, mermaid graph with clusters and impact score, and the BUG ↔ SPEC traceability matrix on both ends. Validates invariants and stops with an explicit error on inconsistency. `/reversa-bug-graph` |
+| **Bug Graph** | Regenerates all derived views: index, compact catalog (`catalog.jsonl`), sparse relation matrix, mermaid graph with clusters and impact score, and the BUG ↔ SPEC traceability matrix on both ends. Validates invariants and stops with an explicit error on inconsistency. `/reversa-debugger-graph` |
 
 ---
 
